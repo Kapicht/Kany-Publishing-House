@@ -15,7 +15,7 @@ export default function Footer() {
     { name: "Facebook", icon: Facebook, href: "https://facebook.com" },
     { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
     { name: "Instagram", icon: Instagram, href: "https://instagram.com" },
-    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/kany-publishing-house/posts/?feedView=all" },
   ]
 
   return (
