@@ -5,6 +5,7 @@ import { BackgroundPattern } from "./components/background-pattern"
 import { motion } from "framer-motion"
 import Footer from "./components/footer"
 import Image from "next/image"
+import Logo from "./components/logo"
 
 export default function Home() {
   return (
@@ -12,6 +13,14 @@ export default function Home() {
       <BackgroundPattern />
       <div className="container mx-auto px-4 py-12 relative flex-grow">
         <Link href="/" className="block w-40 mb-8">
+          <Image
+            src="/kany-logo.jpg"
+            alt="Kany Publishing Logo"
+            width={160}
+            height={160}
+            className="w-full h-auto"
+            priority
+          />
         </Link>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -38,7 +47,15 @@ export default function Home() {
                     asChild
                     className="bg-[#CC7722] hover:bg-[#CC7722]/90 text-white font-semibold px-6 py-3 text-lg shadow-lg transition-all duration-300 border-2 border-[#FFD700]"
                   >
-                    <Link href={`/${text.toLowerCase().replace(/\s+/g, "-")}`}>{text}</Link>
+                    <Link
+                      href={
+                        text === "Meet the Creative Minds"
+                          ? "/meet-the-creative-minds"
+                          : `/${text.toLowerCase().replace(/\s+/g, "-")}`
+                      }
+                    >
+                      {text}
+                    </Link>
                   </Button>
                 </motion.div>
               ),
@@ -77,7 +94,7 @@ export default function Home() {
           </Button>
         </motion.section>
       </div>
-      
+      <Footer />
     </div>
   )
 }
